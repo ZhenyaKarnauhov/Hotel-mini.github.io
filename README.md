@@ -1,1 +1,1 @@
-# Hotel-mini.github.io
+# Hotel - mini.
