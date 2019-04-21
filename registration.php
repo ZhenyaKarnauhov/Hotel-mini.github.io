@@ -2,7 +2,6 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="styleLog.css">
 	<title>Регистрация</title>
 </head>
@@ -21,6 +20,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
 
 	if ($result) {
 		$smsg = "Регистрация прошла успешно!";
+		$_SESSION['email'] = $email;
 	} else {
 		$fmsg = "Не верно введены данные";
 		
@@ -43,6 +43,14 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
 		<a href="login.php" class="btn btn-lg btn-primary btn-block">Авторизоваться</a>
 		</form>
 	</div>
+
+	<?php 
+	if (isset($_SESSION['email'])) {
+		$email = $_SESSION['email'];
+		echo "<div class='signin-text'>На вашу почту : " .$email. " отправлено сообщение , о успешной регистрации! </div>";
+
+	}
+ ?>
 	
 </body>
 </html>
