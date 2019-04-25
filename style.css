@@ -6,6 +6,36 @@
 	width: 100%;
 	min-height: 100px;
 	margin: 0 auto 40px;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-around;
+	align-items: center;
+	box-sizing: border-box;
+}
+#item3{
+	flex:6;
+}
+#item2{
+	flex:2;
+}
+
+.topItem{
+	display: flex;
+	flex-direction: column;
+}
+.url{
+	display: inline-block;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: blue;
+	margin: 5px 15px;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: 'Montserrat' , sans-serif;
+}
+.li li{
+	list-style-type: none;
 }
 .grid{
 	width: 100%;
@@ -30,6 +60,22 @@
 .grid-item img{
 	width: 430px;
 	height: 200px;
+}
+.container{
+	width: 100%;
+	min-width: 660px;
+	margin: 0 auto;
+	display: flex;
+}
+.booking{
+	min-height: 300px;
+	min-width: 400px;
+	display: flex;
+	margin-left: 5px;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+
 }
 
 
