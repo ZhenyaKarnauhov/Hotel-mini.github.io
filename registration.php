@@ -21,6 +21,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
 	if ($result) {
 		$smsg = "Регистрация прошла успешно!";
 		$_SESSION['email'] = $email;
+		$_SESSION['username'] = $username;
 	} else {
 		$fmsg = "Не верно введены данные";
 		
@@ -40,15 +41,21 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
 		<input type="email" name="email" class="form-control" placeholder="Email" required>
 		<input type="password" name="password" class="form-control" placeholder="Пароль" required>
 		<button class="btn btn-lg btn-primary btn-block" type="submit">Зарегистрироваться</button>
-		<a href="login.php" class="btn btn-lg btn-primary btn-block">Авторизоваться</a>
+		<a class="url" href="login.php" class="btn btn-lg btn-primary btn-block">Авторизоваться</a>
 		</form>
 	</div>
 
 	<?php 
 	if (isset($_SESSION['email'])) {
 		$email = $_SESSION['email'];
+		$username = $_SESSION['username'];
 		echo "<div class='signin-text'>На вашу почту : " .$email. " отправлено сообщение , о успешной регистрации! </div>";
 
+
+	$message = "Вы успешно зарегистрировались ".$username." на сайте нашего Отеля-Орион. ";
+	$to = "".$email."";
+	$subject = "Отель-Орион";
+	mail($to, $subject, $message);
 	}
  ?>
 	

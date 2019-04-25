@@ -37,8 +37,8 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
 			if (isset($fmsg)) { ?> <div class="alert alert-danger" role="alert"> <?php echo $fmsg; ?> </div> <?php } ?>
 		<input type="text" name="username" class="form-control" placeholder="Имя" required>
 		<input type="password" name="password" class="form-control" placeholder="Пароль" required>
-		<button class="btn btn-lg btn-primary btn-block" type="submit">Авторизоваться</button>
-		<a href="registration.php" class="btn btn-lg btn-primary btn-block">Зарегистрироваться</a>
+		<button type="submit">Авторизоваться</button>
+		<a class="url" href="registration.php" class="btn btn-lg btn-primary btn-block">Зарегистрироваться</a>
 		</form>
 	</div>
 <?php 
@@ -46,7 +46,7 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
 		$username = $_SESSION['username'];
 		echo "<div class='signin-text'>Добро пожаловать " .$username. "! </div>";
 		echo "<br><div class='signin-text'>Вы вошли!</div>";
-		echo "<a href='index.php' class='btn btn-lg btn-primary'>На главную страницу</a>";
+		echo "<a href='index.php' class='signin-text'>На главную страницу</a>";
 	}
  ?>
 
